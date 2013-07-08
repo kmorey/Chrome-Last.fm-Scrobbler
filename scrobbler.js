@@ -73,7 +73,7 @@ const ACTION_CONN_DISABLED = 7;
    // now playing notifications
    if (localStorage.useNotificationsNowPlaying == null)
       localStorage.useNotificationsNowPlaying = 1;
-   
+
    // scrobbled notifications
    if (localStorage.useNotificationsScrobbled == null)
       localStorage.useNotificationsScrobbled = 1;
@@ -403,11 +403,11 @@ function nowPlaying() {
 
          // Confirm the content_script, that the song is "now playing"
          chrome.tabs.sendRequest(nowPlayingTab, {type: "nowPlayingOK"});
-         
+
          // Show notification
          if (localStorage.useNotificationsNowPlaying == 1)
             scrobblerNotification(notifText);
-      
+
          // Update page action icon
          setActionIcon(ACTION_NOWPLAYING);
    } else {
